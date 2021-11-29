@@ -82,7 +82,7 @@ class _ToggleScreenState extends State<ToggleScreen> {
     switch(index){
       case 0: return MainScreen();
       case 1: return FavouriteScreen();
-      case 2: return ShoppingCartScreen();
+      case 2: return ShoppingCartScreen(isFromProductScreen: false);
       case 3: return TradeHistoryScreen();
       case 4: return AboutUsScreen();
       default:

@@ -37,6 +37,8 @@ class _TradeHistoryItemWidgetState extends State<TradeHistoryItemWidget> {
       onTap: (){
         if(widget.inSelectedState() == true){
           toggleSelectedState();
+        }else{
+          Navigator.pushNamed(context, '/product');
         }
       },
       child: Container(

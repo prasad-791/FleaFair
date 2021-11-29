@@ -1,5 +1,8 @@
 import 'package:flea_fair/configurations/config.dart';
 import 'package:flea_fair/models/home_item.dart';
+import 'package:flea_fair/models/product.dart';
+import 'package:flea_fair/models/product_screen_arguments.dart';
+import 'package:flea_fair/screens/productscreen/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeItemWidget extends StatelessWidget {
@@ -11,7 +14,17 @@ class HomeItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){print("Favourite Item Tapped");},
+      onTap: (){
+        Navigator.pushNamed(context, ProductScreen.routeName,arguments: ProductScreenArguments(product: Product(
+          productID: '',
+          images: imagePaths,
+          productTitle: item.productTitle,
+          productDescription: item.productDescription,
+          productPrice: item.productPrice,
+          addedToCart: false,
+          isFav: false,
+        )));
+      },
       child: Container(
           height: MediaQuery.of(context).size.height*0.175,
           width: double.infinity,

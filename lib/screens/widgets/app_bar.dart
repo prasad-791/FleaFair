@@ -13,9 +13,9 @@ class BuildAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         DrawerBtn(openDrawer: openDrawer),
-        Spacer(flex: 1),
         Text(
           'Flea Fair',
           style: GoogleFonts.sansita(
@@ -24,7 +24,6 @@ class BuildAppBar extends StatelessWidget {
               color: primaryBlueLight,
               fontStyle: FontStyle.italic),
         ),
-        Spacer(flex: 1),
         ProfileButton(),
       ],
     );

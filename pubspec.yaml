@@ -39,6 +39,8 @@ dependencies:
   fab_circular_menu: ^1.0.2
   circular_menu: ^1.2.3
   image_picker: ^0.8.4+4
+  carousel_slider: ^4.0.0
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,8 @@
 import 'package:flea_fair/configurations/config.dart';
+import 'package:flea_fair/models/product.dart';
+import 'package:flea_fair/models/product_screen_arguments.dart';
 import 'package:flea_fair/models/shopping_cart_item.dart';
+import 'package:flea_fair/screens/productscreen/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingCartItemWidget extends StatefulWidget {
@@ -36,6 +39,16 @@ class _ShoppingCartItemWidgetState extends State<ShoppingCartItemWidget> {
       onTap: (){
         if(widget.inSelectedState() == true){
           toggleSelectedState();
+        }else{
+          Navigator.pushNamed(context, ProductScreen.routeName,arguments: ProductScreenArguments(product: Product(
+            productID: '',
+            images: imagePaths,
+            productTitle: widget.item.productTitle,
+            productDescription: widget.item.productDescription,
+            productPrice: widget.item.productPrice,
+            addedToCart: false,
+            isFav: false,
+          )));
         }
       },
 

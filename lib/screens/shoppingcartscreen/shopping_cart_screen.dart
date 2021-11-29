@@ -1,5 +1,6 @@
 import 'package:flea_fair/configurations/config.dart';
 import 'package:flea_fair/screens/widgets/app_bar.dart';
+import 'package:flea_fair/screens/widgets/app_bar_product_screen.dart';
 import 'package:flea_fair/screens/widgets/share_delete_menu.dart';
 import 'package:flea_fair/screens/widgets/shopping_cart_item_widget.dart';
 import 'package:flea_fair/screens/widgets/slideable_widget.dart';
@@ -7,7 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class ShoppingCartScreen extends StatefulWidget {
-  const ShoppingCartScreen({Key? key}) : super(key: key);
+
+  final bool isFromProductScreen;
+
+  const ShoppingCartScreen({Key? key,required this.isFromProductScreen}) : super(key: key);
 
   @override
   _ShoppingCartScreenState createState() => _ShoppingCartScreenState();
@@ -43,14 +47,18 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBody: true,
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.grey[100],
         elevation: 0,
-        title: BuildAppBar(openDrawer: openDrawer),
+        title: widget.isFromProductScreen== true ? ProductScreenAppBar(goBack: (){
+          Navigator.pop(context);
+        }, isFromProductScreen: false):BuildAppBar(openDrawer: openDrawer),
       ),
       body: Column(
         children: [

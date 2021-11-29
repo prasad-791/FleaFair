@@ -1,4 +1,6 @@
 import 'package:flea_fair/configurations/config.dart';
+import 'package:flea_fair/screens/productscreen/product_screen.dart';
+import 'package:flea_fair/screens/shoppingcartscreen/shopping_cart_screen.dart';
 import 'package:flea_fair/screens/splashscreen.dart';
 import 'package:flea_fair/screens/toggle_screen/toggle_screen.dart';
 import 'package:flea_fair/screens/wrapper.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/wrapper': (context) =>  Wrapper(),
         '/toggle': (context) => ToggleScreen(logOut:(){}),
+        // '/product': (context) => ProductScreen(),
+        ProductScreen.routeName: (context)=> ProductScreen(),
       },
     );
   }

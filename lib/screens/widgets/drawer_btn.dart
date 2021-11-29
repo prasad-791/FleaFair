@@ -20,6 +20,7 @@ class DrawerBtn extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: shadowList,
+          border: customBorder,
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage('assets/images/menu.png'),

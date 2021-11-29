@@ -16,6 +16,7 @@ Color primaryGold = Color.fromARGB(255, 247, 174, 133);
 Color primaryBlueLight = Colors.indigo;
 
 List<BoxShadow> shadowList = [BoxShadow(color: Colors.grey,offset: const Offset(1.0,1.0,),blurRadius: 0.0,spreadRadius: 0.0,)];
+Border customBorder = Border.all(color: Colors.grey,width:0.0);
 
 final List<DrawerItem> drawerItemList = [
   DrawerItem(title: 'Home', icon: Icons.home,index: 0),
@@ -32,7 +33,6 @@ final List<BottomNavBarItem> bottomNavBarItemList = [
   BottomNavBarItem(index: 2, icon: Icons.notifications)
 ];
 
-
 final String fontBlack = 'NunitoSansBlack';
 final String fontExtraBold = 'NunitoSansExtraBold';
 final String fontBold = 'NunitoSansBold';
@@ -40,6 +40,9 @@ final String fontBoltItalic = 'NunitoSansBoldItalic';
 final String fontSemiBold = 'NunitoSansSemiBold';
 final String fontSemiBoldItalic = 'NunitoSansSemiBoldItalic';
 
+
+
+// Temporary Lists
 List<FavouriteItem> favouriteItemList = [
   FavouriteItem(productID: '', imagePath: 'assets/images/apron.jpeg', productTitle: 'WorkShop Apron', productDescription: 'WorkShop Apron used for 1 year', productPrice: 60.0,addedToCart: false,isSelected: false),
   FavouriteItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0,addedToCart: false,isSelected: false),
@@ -52,14 +55,14 @@ List<FavouriteItem> favouriteItemList = [
 ];
 
 List<ShoppingCartItem> shoppingCartItemList = [
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/apron.jpeg', productTitle: 'WorkShop Apron', productPrice: 60.0, noOfItems: 3,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productPrice: 1258.0, noOfItems: 4,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/edraw.jpg', productTitle: 'Engineering Drawing Box for Second Year', productPrice: 250.0, noOfItems: 2,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/laptop.jpg', productTitle: 'Apple MacBook pro', productPrice: 35000.0, noOfItems: 1,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/apron.jpeg', productTitle: 'WorkShop Apron', productPrice: 60.0, noOfItems: 3,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productPrice: 1258.0, noOfItems: 4,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/edraw.jpg', productTitle: 'Engineering Drawing Box for Second Year', productPrice: 250.0, noOfItems: 2,isSelected: false),
-  ShoppingCartItem(productID: '', imagePath: 'assets/images/laptop.jpg', productTitle: 'Apple MacBook pro', productPrice: 35000.0, noOfItems: 1,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/apron.jpeg', productTitle: 'WorkShop Apron', productDescription: 'WorkShop Apron used for 1 year',productPrice: 60.0, noOfItems: 3,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productDescription: 'Engineering books for 3rd year',productPrice: 1258.0, noOfItems: 4,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/edraw.jpg', productTitle: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year',productPrice: 250.0, noOfItems: 2,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/laptop.jpg', productTitle: 'Apple MacBook pro', productDescription:'MacBook Pro used for 2 years',productPrice: 35000.0, noOfItems: 1,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/apron.jpeg', productTitle: 'WorkShop Apron', productDescription: 'WorkShop Apron used for 1 year',productPrice: 60.0, noOfItems: 3,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productDescription: 'Engineering books for 3rd year',productPrice: 1258.0, noOfItems: 4,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/edraw.jpg', productTitle: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year',productPrice: 250.0, noOfItems: 2,isSelected: false),
+  ShoppingCartItem(productID: '', imagePath: 'assets/images/laptop.jpg', productTitle: 'Apple MacBook pro', productDescription:'MacBook Pro used for 2 years',productPrice: 35000.0, noOfItems: 1,isSelected: false),
 ];
 
 List<HomeItem> homeItemList = [
@@ -77,7 +80,11 @@ List<GridItem> gridItemList = [
   GridItem(imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
   GridItem(imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
   GridItem(imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
-  GridItem(imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0)
+  GridItem(imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
+  GridItem(imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
+  GridItem(imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
+  GridItem(imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
+  GridItem(imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
 ];
 
 List<TradeHistoryItem> orderedProductsList = [
@@ -100,4 +107,12 @@ List<TradeHistoryItem> purchasedProductsList = [
   TradeHistoryItem(productID: '', imagePath: 'assets/images/books.jpeg', productTitle: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0,isSelected: false),
   TradeHistoryItem(productID: '', imagePath: 'assets/images/edraw.jpg', productTitle: 'Engineering Drawing Box', productDescription: 'Box used for 1 year', productPrice: 250.0,isSelected: false),
   TradeHistoryItem(productID: '', imagePath: 'assets/images/laptop.jpg', productTitle: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0,isSelected: false),
+];
+
+List<String> imagePaths = [
+  'assets/images/apron.jpeg',
+  'assets/images/books.jpeg',
+  'assets/images/edraw.jpg',
+  'assets/images/laptop.jpg',
+  'assets/images/logo_name.png',
 ];
