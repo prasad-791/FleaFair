@@ -3,13 +3,16 @@ import 'package:flea_fair/screens/widgets/placeholder_toast.dart';
 import 'package:flutter/material.dart';
 
 class ProfileButton extends StatelessWidget {
+
+
   const ProfileButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        showToast();
+        Navigator.pushNamed(context, '/profile');
+        // showToast('This feature will be available shortly!');
       },
       child: Container(
         padding: EdgeInsets.all(8),

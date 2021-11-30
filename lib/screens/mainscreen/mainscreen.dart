@@ -4,6 +4,7 @@ import 'package:flea_fair/screens/addproductscreen/add_product_screen.dart';
 import 'package:flea_fair/screens/homescreen/home_screen.dart';
 import 'package:flea_fair/screens/notifications_screen/notifications_screen.dart';
 import 'package:flea_fair/screens/widgets/app_bar.dart';
+import 'package:flea_fair/screens/widgets/placeholder_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -59,6 +60,12 @@ class _MainScreenState extends State<MainScreen> {
         )).toList(),
         onTap: (index){
           setState((){
+            // if(index==2){
+            //   selectedIndex = 0;
+            //   showToast('This feature will be available shortly');
+            // }else{
+            //   selectedIndex = index;
+            // }
             selectedIndex = index;
           });
         },

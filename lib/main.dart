@@ -1,8 +1,10 @@
 import 'package:flea_fair/configurations/config.dart';
 import 'package:flea_fair/screens/productscreen/product_screen.dart';
+import 'package:flea_fair/screens/profilescreen/profile_screen.dart';
 import 'package:flea_fair/screens/shoppingcartscreen/shopping_cart_screen.dart';
 import 'package:flea_fair/screens/splashscreen.dart';
 import 'package:flea_fair/screens/toggle_screen/toggle_screen.dart';
+import 'package:flea_fair/screens/viewallscreen/view_all_screen.dart';
 import 'package:flea_fair/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/wrapper': (context) =>  Wrapper(),
         '/toggle': (context) => ToggleScreen(logOut:(){}),
-        // '/product': (context) => ProductScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/view_all': (context) => ViewAllScreen(),
         ProductScreen.routeName: (context)=> ProductScreen(),
       },
     );

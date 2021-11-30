@@ -7,9 +7,12 @@ import 'package:flea_fair/screens/widgets/wishlist_cart_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class ProductScreen extends StatefulWidget {
   static const routeName = '/product';
+
   const ProductScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,8 +21,11 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
 
+  var phoneNo = '+919172260816';
+
   int currIndex=0;
   final controller = CarouselController();
+
   late Product item = Product(
     productID: '',
     images: [],
@@ -92,7 +98,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Container(
       width: width*0.5,
       color: bgColor,
-      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+      padding: EdgeInsets.symmetric(vertical: 15,horizontal: 20),
       child: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +113,7 @@ class _ProductScreenState extends State<ProductScreen> {
               style: TextStyle(
                 color: color,
                 fontSize: 18,
-                fontFamily: fontSemiBold,
+                fontFamily: fontBold,
               ),
             )
           ],
@@ -120,14 +126,15 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget buildDescription(var height, var width){
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.only(right: 10,top: 20),
+      margin: EdgeInsets.only(left:10,right: 10,top: 20),
       padding: EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(topRight: Radius.circular(5),bottomRight: Radius.circular(5)),
+        // borderRadius: BorderRadius.only(topRight: Radius.circular(5),bottomRight: Radius.circular(5)),
+        borderRadius: BorderRadius.only(topRight: Radius.circular(5),bottomRight: Radius.circular(5),topLeft: Radius.circular(5),bottomLeft: Radius.circular(5)),
         color: Colors.white,
         border: customBorder,
         boxShadow: [
-          BoxShadow(color: primaryGreyLight,spreadRadius: 0,blurRadius: 0,offset: const Offset(1.5, 2.0)),
+          BoxShadow(color: primaryGreyLight,spreadRadius: 0,blurRadius: 0,offset: const Offset(1.0, 1.0)),
         ],
       ),
       child: Column(
@@ -165,8 +172,8 @@ class _ProductScreenState extends State<ProductScreen> {
       ),
       child: Row(
         children: [
-            GestureDetector(onTap: (){
-
+            GestureDetector(onTap: ()async{
+                launch('tel://'+phoneNo);
             },child: buildButton(Icons.call,'Call',Colors.white,Colors.green,width),),
             GestureDetector(onTap: (){
 
@@ -195,8 +202,8 @@ class _ProductScreenState extends State<ProductScreen> {
                     maxLines: 2,
                     style: TextStyle(
                       color: primaryBlueLight,
-                      fontSize: 24,
-                      fontFamily: fontBlack,
+                      fontSize: 22,
+                      fontFamily: fontExtraBold,
                     ),
                   ),
                 ),
@@ -206,7 +213,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     'Rs. ${item.productPrice}/-',
                     style: TextStyle(
                       color: Colors.green,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontFamily: fontBold,
                     ),
                   ),
@@ -245,7 +252,8 @@ class _ProductScreenState extends State<ProductScreen> {
         title: ProductScreenAppBar(goBack: (){
           Navigator.pop(context);
         },
-        isFromProductScreen: true,),
+        isFromProductScreen: true,
+          ),
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -1,12 +1,16 @@
 import 'package:flea_fair/configurations/config.dart';
 import 'package:flea_fair/screens/widgets/app_bar.dart';
+import 'package:flea_fair/screens/widgets/app_bar_product_screen.dart';
 import 'package:flea_fair/screens/widgets/share_delete_menu.dart';
 import 'package:flea_fair/screens/widgets/trade_history_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class TradeHistoryScreen extends StatefulWidget {
-  const TradeHistoryScreen({Key? key}) : super(key: key);
+
+  final bool isFromProductScreen;
+
+  const TradeHistoryScreen({Key? key, required this.isFromProductScreen}) : super(key: key);
 
   @override
   _TradeHistoryScreenState createState() => _TradeHistoryScreenState();
@@ -105,16 +109,43 @@ class _TradeHistoryScreenState extends State<TradeHistoryScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBody: true,
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        backgroundColor: Colors.grey[200],
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.grey[100],
         elevation: 0,
-        title: BuildAppBar(openDrawer: openDrawer),
+        title: widget.isFromProductScreen== true ? ProductScreenAppBar(goBack: (){
+          Navigator.pop(context);
+        }, isFromProductScreen: false,
+          ):BuildAppBar(openDrawer: openDrawer),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Container(
+                margin: EdgeInsets.only(top:20,left: 20,bottom: 10),
+                child: Text(
+                  'Trade History',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: fontExtraBold,
+                    color: Colors.black87,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20,bottom: 20,right: 5),
+                child: Text(
+                  'Tap and hold to see various actions',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: fontSemiBold,
+                    color: primaryGrey,
+                  ),
+                ),
+              ),
               GestureDetector(onTap: (){
                 setState(() {
                   isPurchasedProductsVisible = !isPurchasedProductsVisible;

@@ -77,14 +77,14 @@ List<HomeItem> homeItemList = [
 ];
 
 List<GridItem> gridItemList = [
-  GridItem(imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
-  GridItem(imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
-  GridItem(imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
-  GridItem(imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
-  GridItem(imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
-  GridItem(imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
-  GridItem(imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
-  GridItem(imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
+  GridItem(productID:'',imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
+  GridItem(productID:'',imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
+  GridItem(productID:'',imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
+  GridItem(productID:'',imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
+  GridItem(productID:'',imagePath: 'assets/images/apron.jpeg', productName: 'Engineering Apron', productDescription: 'Engineering Workshop Apron for First Year Engineering', productPrice: 75),
+  GridItem(productID:'',imagePath: 'assets/images/books.jpeg',productName: 'Engineering Books', productDescription: 'Engineering books for 3rd year', productPrice: 1258.0),
+  GridItem(productID:'',imagePath: 'assets/images/edraw.jpg', productName: 'Engineering Drawing Box for Second Year', productDescription: 'Box used for 1 year', productPrice: 250.0),
+  GridItem(productID:'',imagePath: 'assets/images/laptop.jpg', productName: 'Apple MacBook pro', productDescription: 'MacBook Pro used for 2 years', productPrice: 35000.0),
 ];
 
 List<TradeHistoryItem> orderedProductsList = [

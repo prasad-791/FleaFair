@@ -1,4 +1,7 @@
 import 'package:flea_fair/configurations/config.dart';
+import 'package:flea_fair/models/product.dart';
+import 'package:flea_fair/models/product_screen_arguments.dart';
+import 'package:flea_fair/screens/productscreen/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flea_fair/models/trade_history_item.dart';
 
@@ -38,11 +41,19 @@ class _TradeHistoryItemWidgetState extends State<TradeHistoryItemWidget> {
         if(widget.inSelectedState() == true){
           toggleSelectedState();
         }else{
-          Navigator.pushNamed(context, '/product');
+          Navigator.pushNamed(context, ProductScreen.routeName,arguments: ProductScreenArguments(product: Product(
+            productID: '',
+            images: imagePaths,
+            productTitle: widget.item.productTitle,
+            productDescription: widget.item.productDescription,
+            productPrice: widget.item.productPrice,
+            addedToCart: false,
+            isFav: false,
+          )));
         }
       },
       child: Container(
-        margin: EdgeInsets.only(top: 4),
+        margin: EdgeInsets.only(bottom: 4),
         padding: EdgeInsets.only(top: 5,bottom: 5),
         height: MediaQuery.of(context).size.height*0.15,
         width: double.infinity,

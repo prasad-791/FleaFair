@@ -1,5 +1,6 @@
 import 'package:flea_fair/configurations/config.dart';
 import 'package:flea_fair/screens/widgets/app_bar.dart';
+import 'package:flea_fair/screens/widgets/app_bar_product_screen.dart';
 import 'package:flea_fair/screens/widgets/favourite_item_widget.dart';
 import 'package:flea_fair/screens/widgets/share_delete_menu.dart';
 import 'package:flea_fair/screens/widgets/slideable_widget.dart';
@@ -7,7 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({Key? key}) : super(key: key);
+
+  final bool isFromProductScreen;
+
+  const FavouriteScreen({Key? key, required this.isFromProductScreen}) : super(key: key);
 
   @override
   _FavouriteScreenState createState() => _FavouriteScreenState();
@@ -48,9 +52,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
       extendBody: true,
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.grey[100],
         elevation: 0,
-        title: BuildAppBar(openDrawer: openDrawer),
+        title: widget.isFromProductScreen== true ? ProductScreenAppBar(goBack: (){
+          Navigator.pop(context);
+        }, isFromProductScreen: false,
+        ):BuildAppBar(openDrawer: openDrawer),
       ),
       body: ListView(
         children: [
@@ -66,9 +74,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 20,bottom: 10),
+            margin: EdgeInsets.only(left: 20,bottom: 10,right: 5),
             child: Text(
-              '<-- Swipe left on each product to see various actions',
+              '<-- Swipe left on the product or tap and hold to see various actions',
               style: TextStyle(
                 fontSize: 12,
                 fontFamily: fontSemiBold,

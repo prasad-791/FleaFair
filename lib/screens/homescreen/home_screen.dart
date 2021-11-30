@@ -56,7 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 18,
                 ),
               ),
-              GestureDetector(onTap: (){},child: buildViewAllButton(),),
+              GestureDetector(onTap: (){
+                Navigator.pushNamed(context, '/view_all');
+              },child: buildViewAllButton(),),
             ],
           ),
       );

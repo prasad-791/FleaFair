@@ -58,7 +58,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
         elevation: 0,
         title: widget.isFromProductScreen== true ? ProductScreenAppBar(goBack: (){
           Navigator.pop(context);
-        }, isFromProductScreen: false):BuildAppBar(openDrawer: openDrawer),
+        }, isFromProductScreen: false,):BuildAppBar(openDrawer: openDrawer),
       ),
       body: Column(
         children: [
@@ -79,9 +79,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 ),
                 // Swipe Tip Text
                 Container(
-                  margin: EdgeInsets.only(left: 20,bottom: 10),
+                  margin: EdgeInsets.only(left: 20,bottom: 10,right: 5),
                   child: Text(
-                    '<-- Swipe left on each product to see various actions',
+                    '<-- Swipe left on the product or tap and hold to see various actions',
                     style: TextStyle(
                       fontSize: 12,
                       fontFamily: fontSemiBold,
